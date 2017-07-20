@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>New York Times Search</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div id="mainWrapper">
+        <div id="Header"><img id="newspaperIco" src="assets/newspaper.png" /><strong>New York Times Search</strong></div>
+        <div id="search">
+            <div id="searchHeadWrapper">
+                <div id="searchParams">Search Parameters</div>
+            </div>
+            <form id="searchForm" name="startSearch">
+                Search Term <input id="searchTerm" class="inputItem" type="text" name="Search Term" required>
+                Number of Records 
+                <select id="recordNum" class="inputItem" name="articleNum">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                Start Year (optional) <input id="startYear" class="inputItem" type="text" name="Start Year">
+                End Year (optional) <input id="endYear" class="inputItem" type="text" name="End Year">
+                <div id="buttonWrapper">
+                    <input id="searchButton" type="button" onclick="get_results()" value="Submit">
+                    <button id="clear">Clear Results</button>
+                </div>
+            </form>
+        </div>
+        <div id="results">
+            <div id="resultsHeaderWrapper">
+                <div id="resultsHeader">Search Results</div>
+            </div>
+            <div id="displayResults"></div>
+        </div>
+        </div>
+        <script src="script.js"></script>        
+    </body>
+</html>

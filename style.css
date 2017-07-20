@@ -1,0 +1,96 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+}
+#mainWrapper{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#Header{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color:#000051;
+    height:200px;
+    border-radius:5px;
+    font-size:32pt;
+}
+#newspaperIco{
+    height:50px;
+    margin: 0 10px 0 0;
+}
+#search{
+    margin: 25px;
+    display:flex;
+    justify-content:flex-start;
+    flex-flow:column;
+    width:80%;
+    border:2px solid #000051;
+    border-radius:5px;
+}
+#searchHeadWrapper{
+    display:flex;
+    flex-flow:row nowrap;
+    width:100%;
+    background-color:#000051;
+}
+#searchParameters{
+    display:flex;
+}
+#searchForm{
+    color:#1a237e;
+    display:flex;
+    flex-flow:column nowrap;
+    width:80%;
+    margin: 10px 20px;
+}
+.inputItem{
+    margin: 0 0 20px;
+    border: 2px solid #8187ff;
+    border-radius:2px;
+}
+#buttonWrapper{
+    display:flex;
+    flex-flow:row nowrap;
+}
+#searchButton{
+    background-color:#3d5afe;
+    border-radius:5px;
+    border: none;
+    margin: 0 20px 25px;
+    height:40px;
+}
+#clear{
+    background-color:#3d5afe;
+    border-radius:5px;
+    border: none;
+    margin: 0 20px 25px;
+    height:40px;
+}
+#results{
+    display:flex;
+    flex-flow: column nowrap;
+    width:80%;
+    border:2px solid #000051;
+    border-radius:5px;
+}
+#resultsHeader{
+    width:100%;
+    background-color:#000051;
+}
+#resultsHeaderWrapper{
+    display:flex;
+    flex-flow: row nowrap;
+}
+#displayResults{
+    margin: 20px 20px;
+}
+
+#contentItem{
+    color:#000051;
+}
