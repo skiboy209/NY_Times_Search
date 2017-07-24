@@ -85,7 +85,7 @@ body{
 }
 #resultsHeaderWrapper{
     display:flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
 }
 #displayResults{
     margin: 20px 20px;
@@ -93,4 +93,7 @@ body{
 
 #contentItem{
     color:#000051;
+    border:2px solid #000051;
+    margin: 10px 0 10px 0;
+    padding: 10px 10px 10px;
 }

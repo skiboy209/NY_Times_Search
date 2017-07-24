@@ -1,32 +1,43 @@
-$("#clear").click(function(){
-    $(this).closest('form').find("input[type=text], textarea").val("");
-    $(this).closest('form').find("select[type=text], textarea").val("");
-})
+
 
 var searchTerm;
 var recordNum;
 var startYear;
 var endYear;
 
+//Clear Results of Search
+$("#clear").click(function(){
+    $(this).closest('form').find("input[type=text], textarea").val("");
+    $(this).closest('form').find("select[type=text], textarea").val("");
+    $("#displayResults").html("<div id='displayResults'></div>");
+})
 //Get Results of Search
 function get_results(){
     searchTerm = $("#searchTerm").val();
     recordNum = $("#recordNum").val();
     startYear = $("#startYear").val();
     endYear = $("#endYear").val();
+    if(startYear === ""){
+        startYear = 1981;
+        console.log("STARTED YEAR");
+    } else if(startYear < 1981){
+        alert("Search range has been reset to the minimum year 1981")
+        startYear = 1981;
+        $("#startYear").val(startYear);        
+    }
+    if(endYear === ""){
+        endYear = new Date().getFullYear();
+        console.log("Ended year: " + endYear);
+    }
     search();
 }
 
 function search(){
 
-    startYear = startYear;
-    endYear = endYear;
-    search = searchTerm;
-
     var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     url += '?' + $.param({
       'api-key': "ae7a6092bb5d480aaeadb016f0a3b512",
-      'q': search,
+      'q': searchTerm,
       'begin_date': startYear + "0101",
       'end_date': endYear + "0101"
     });
@@ -39,8 +50,8 @@ function search(){
       for (var i = 0; i < recordNum; i++) {
           console.log(result.response.docs[i]);
 
-          $('#topArticles').append($('<div id="article"' + i + '></div>'));
-          $('#article' + i).append($('<h2 class="title">' + result.response.docs[i].headline.main + '</h2>'));
+          /*$('#topArticles').append($('<div id="article"' + i + '></div>'));
+          $('#article' + i).append($('<h2 class="title">' + result.response.docs[i].headline.main + '</h2>'));*/
 
           //<p>" + result.response.docs[i].byline.original+"</p>
           var docNumber = i + 1;
